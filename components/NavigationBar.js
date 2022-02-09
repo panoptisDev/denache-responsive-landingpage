@@ -72,7 +72,7 @@ export default function Navbar() {
           <Link>Contact</Link>
         </LinkWrapper>
         <ButtonWrapper>
-          <ContactButton text="Talk to me" url={"/"}/>
+          <ContactButton text="Talk to me" url={"/"} size="10px 20px"/>
         </ButtonWrapper>
       </Content>
     </NavigationBar>
