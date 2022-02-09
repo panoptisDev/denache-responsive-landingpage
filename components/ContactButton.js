@@ -1,8 +1,9 @@
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const Button = styled.a`
+const Button = styled(motion.a)`
  position: relative;
  padding: 10px 28px;
  ${(props) =>
@@ -30,7 +31,7 @@ const Button = styled.a`
 
 export default function ContactButton({ text, url, size, float }) {
  return (
-  <Button href={url} size={size} float={float}>
+  <Button href={url} size={size} float={float} whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
    {text}
   </Button>
  );
