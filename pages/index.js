@@ -53,22 +53,11 @@ const HeroTextItem = {
 };
 
 const HeroImageWrapper = styled(motion.div)`
- flex: 1 1;
+ 
 `;
 
 const HandImageWrapper = styled(motion.div)`
  float: right;
- /* ::before {
-  content: '';
-  z-index: -1;
-  background-image: url(/ellipse-1.svg);
-  background-size: cover;
-  position: absolute;
-  width: 619px;
-  height: 604px;
-  left: 682px;
-  bottom: -102px;
- } */
 `;
 
 export default function Home() {

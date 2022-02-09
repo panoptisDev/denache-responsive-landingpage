@@ -24,6 +24,12 @@ export default function VioletEllipse() {
    fill='none'
    initial='hidden'
    animate='visible'
+   style={{
+     position: "relative",
+     top: "65px",
+     left: "140px",
+     zIndex: "-10"
+   }}
   >
    <mask
     id='mask0_20_61'
