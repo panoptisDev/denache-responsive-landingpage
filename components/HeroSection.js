@@ -71,7 +71,7 @@ export default function HeroSection() {
     <motion.p>
      No techie? No problem. I provide creative and professional software development for your business vision.
     </motion.p>
-    <ContactButton variants={HeroTextItem} text='Talk to me' url={'/'} size='10px 28px' float='left' />
+    <ContactButton variants={HeroTextItem} text="Let's collaborate!" url={'/'} size='15px 35px' float='left' />
    </HeroTextWrapper>
    <HeroImageWrapper>
     <HandImageWrapper variants={HandImageWrapperVariants} initial='hidden' animate='show'>
