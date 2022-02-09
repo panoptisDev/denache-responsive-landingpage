@@ -1,13 +1,23 @@
 import Link from 'next/link';
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Button = styled.a`
  position: relative;
  padding: 10px 28px;
+ ${(props) =>
+  props.size &&
+  css`
+   padding: ${props.size};
+  `}
  margin-right: auto;
  width: fit-content;
  float: right;
+ ${(props) =>
+  props.float &&
+  css`
+   float: ${props.float};
+  `}
  border-style: none;
  border-radius: 8px;
  background: #8e8ced;
@@ -18,8 +28,10 @@ const Button = styled.a`
  line-height: 19px;
 `;
 
-export default function ContactButton({ text, url }) {
+export default function ContactButton({ text, url, size, float }) {
  return (
-   <Button href={url}>{text}</Button>
+  <Button href={url} size={size} float={float}>
+   {text}
+  </Button>
  );
 }
