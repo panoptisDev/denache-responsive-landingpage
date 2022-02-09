@@ -47,7 +47,7 @@ const HeroTextWrapperVariants = {
 /* Animation */
 const HeroTextItem = {
  hidden: { opacity: 0, x: -100 },
- show: { opacity: 1, x: 0 },
+ show: { opacity: 1, x: 0, transition: {delay: 0.4}},
 };
 
 const HeroImageWrapper = styled(motion.div)`
@@ -57,6 +57,12 @@ const HeroImageWrapper = styled(motion.div)`
 const HandImageWrapper = styled(motion.div)`
  float: right;
 `;
+
+/* Animation */
+const HandImageWrapperVariants = {
+  hidden: { opacity: 0, x: -100 },
+  show: { opacity: 1, x: 0, transition: {delay: 0.4}},
+ };
 
 export default function HeroSection() {
   return (
@@ -70,7 +76,7 @@ export default function HeroSection() {
       <ContactButton variants={HeroTextItem} text='Talk to me' url={'/'} size='10px 28px' float='left' />
      </HeroTextWrapper>
      <HeroImageWrapper>
-      <HandImageWrapper>
+      <HandImageWrapper variants={HandImageWrapperVariants} initial="hidden" animate="show">
         <VioletEllipse/>
         <Image alt='3D-Hand' src={hand} height={400} width={260}></Image>
       </HandImageWrapper>
