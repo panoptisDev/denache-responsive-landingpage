@@ -19,8 +19,8 @@ const draw = {
 export default function VioletEllipse() {
  return (
   <motion.svg
-   width='250'
-   height='250'
+   width='300'
+   height='300'
    viewBox='500 340 1000 1000'
    fill='none'
    initial='hidden'
