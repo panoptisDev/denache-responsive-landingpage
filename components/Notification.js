@@ -60,9 +60,9 @@ const Blob = styled(motion.div)`
   align-items: center;
 `
 
-export default function Notification({logo, number, left, bottom}) {
+export default function Notification({logo, number, left, bottom, animation}) {
   return (
-    <NotificationWrapper left={left} bottom={bottom}>
+    <NotificationWrapper variants={animation.variants} left={left} bottom={bottom}>
       <LogoWrapper>
         <Image src={logo}/>
       </LogoWrapper>
