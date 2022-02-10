@@ -17,7 +17,7 @@ export default function Home() {
    <main>
     <NavigationBar />
     <HeroSection />
-    <AboutSection/>
+    {/* <AboutSection/> */}
    </main>
 
    <footer></footer>
