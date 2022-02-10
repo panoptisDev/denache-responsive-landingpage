@@ -27,6 +27,17 @@ h1 {
  color: #26262e;
 }
 
+h2 {
+  font-family: Koh Santepheap;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 35px;
+  margin: 0;
+
+  color: #26262e;
+
+}
+
 p {
  font-family: Inter;
  font-style: normal;
