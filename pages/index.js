@@ -6,7 +6,12 @@ import NavigationBar from '../components/NavigationBar';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 
+import { useRef, useState, useEffect } from 'react';
+
 export default function Home() {
+ // check which section is in view (for mobile navbar)
+ const [aboutInViewport, setAboutInViewport] = useState(true)
+
  return (
   <div>
    <Head>
@@ -15,9 +20,9 @@ export default function Home() {
    </Head>
 
    <main>
-    <NavigationBar />
-    <HeroSection />
-    {/* <AboutSection/> */}
+    <NavigationBar activeSection={{/* hero: heroInViewport, */ about: aboutInViewport}}/>
+    <HeroSection/>
+    <AboutSection/>
    </main>
 
    <footer></footer>

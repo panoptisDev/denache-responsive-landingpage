@@ -47,7 +47,7 @@ h3 {
   color: #26262e;
 }
 
-p {
+p, a {
  font-family: Inter;
  font-style: normal;
  font-weight: 300;

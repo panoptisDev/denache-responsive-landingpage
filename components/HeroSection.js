@@ -32,8 +32,8 @@ const HeroTextWrapper = styled(motion.div)`
  flex: 1 1;
  display: flex;
  flex-direction: column;
- align-items: center;
- justify-content: center;
+ align-items: left;
+ justify-content: flex-start;
  gap: 20px;
 
  @media only screen and (max-width: 600px) {
