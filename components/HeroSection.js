@@ -20,6 +20,12 @@ const Section = styled.section`
  @media (min-width: 34rem) {
   margin: 0 auto;
  }
+
+ @media only screen and (max-width: 600px) {
+  flex-direction: column;
+  margin: 0 1rem;
+  margin-top: 100px;
+ }  
 `;
 
 const HeroTextWrapper = styled(motion.div)`
@@ -27,6 +33,11 @@ const HeroTextWrapper = styled(motion.div)`
  display: flex;
  flex-direction: column;
  gap: 20px;
+
+ @media only screen and (max-width: 600px) {
+  text-align: center;
+  align-items: center
+ }  
 `;
 
 /* Animation */
@@ -75,7 +86,7 @@ export default function HeroSection() {
    </HeroTextWrapper>
    <HeroImageWrapper>
     <HandImageWrapper variants={HandImageWrapperVariants} initial='hidden' animate='show'>
-     <VioletEllipse />
+     {/* <VioletEllipse /> */}
      <Image alt='3D-Hand' src={hand} height={400} width={260}></Image>
     </HandImageWrapper>
    </HeroImageWrapper>

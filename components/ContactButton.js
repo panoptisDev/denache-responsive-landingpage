@@ -11,7 +11,6 @@ const Button = styled(motion.a)`
   css`
    padding: ${props.size};
   `}
- margin-right: auto;
  width: fit-content;
  float: right;
  ${(props) =>
@@ -27,6 +26,7 @@ const Button = styled(motion.a)`
  font-weight: 400;
  font-size: 16px;
  line-height: 19px;
+
 `;
 
 export default function ContactButton({ text, url, size, float }) {
