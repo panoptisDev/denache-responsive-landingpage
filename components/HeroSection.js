@@ -24,7 +24,7 @@ const Section = styled.section`
  @media only screen and (max-width: 600px) {
   flex-direction: column;
   margin: 0 1rem;
-  margin-top: 100px;
+  margin-top: 80px;
  }  
 `;
 
@@ -32,11 +32,13 @@ const HeroTextWrapper = styled(motion.div)`
  flex: 1 1;
  display: flex;
  flex-direction: column;
+ align-items: center;
+ justify-content: center;
  gap: 20px;
 
  @media only screen and (max-width: 600px) {
   text-align: center;
-  align-items: center
+  align-items: center;
  }  
 `;
 
@@ -62,10 +64,18 @@ const HeroTextItem = {
 
 const HeroImageWrapper = styled(motion.div)`
  margin-left: -50px;
+ @media only screen and (max-width: 600px) {
+  margin-left: 100px;
+ }  
 `;
 
 const HandImageWrapper = styled(motion.div)`
  float: right;
+ @media only screen and (max-width: 600px) {
+  img {
+    transform: scale(0.8);
+  }
+ }  
 `;
 
 /* Animation */
@@ -86,7 +96,7 @@ export default function HeroSection() {
    </HeroTextWrapper>
    <HeroImageWrapper>
     <HandImageWrapper variants={HandImageWrapperVariants} initial='hidden' animate='show'>
-     {/* <VioletEllipse /> */}
+     <VioletEllipse />
      <Image alt='3D-Hand' src={hand} height={400} width={260}></Image>
     </HandImageWrapper>
    </HeroImageWrapper>

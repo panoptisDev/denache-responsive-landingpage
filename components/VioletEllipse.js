@@ -19,7 +19,15 @@ const SVG = styled(motion.svg)`
   position: relative;
   top: 65px;
   left: 140px;
-  z-index: -10
+  z-index: -10;
+
+  @media only screen and (max-width: 600px) {
+    position: absolute;
+    top: 60vh;
+    left: 50px;
+    width: 250px;
+    height: 250px;
+  }  
 `
 
 const MASK = styled(motion.mask)`
