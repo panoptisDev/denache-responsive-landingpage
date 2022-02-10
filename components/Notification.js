@@ -64,7 +64,7 @@ export default function Notification({logo, number, left, bottom, animation}) {
   return (
     <NotificationWrapper variants={animation.variants} left={left} bottom={bottom}>
       <LogoWrapper>
-        <Image src={logo}/>
+        <Image src={logo} alt="technology-logo"/>
       </LogoWrapper>
       <Blob>
         {number}
