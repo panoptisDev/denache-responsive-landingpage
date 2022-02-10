@@ -60,15 +60,5 @@ p {
 
 @media only screen and (max-width: 600px) {
 
-  p {
-    font-family: Inter;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 1.25rem;
-    margin: 0;
-   
-    /* Text Color */
-    color: #26262e;
-   }
 
 }
