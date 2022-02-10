@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import styled from 'styled-components';
 
 const draw = {
  hidden: { pathLength: 0, opacity: 0 },
@@ -14,27 +15,31 @@ const draw = {
  },
 };
 
+const SVG = styled(motion.svg)`
+  position: relative;
+  top: 65px;
+  left: 140px;
+  z-index: -10
+`
+
+const MASK = styled(motion.mask)`
+  mask-type: alpha; 
+`
+
 
 
 export default function VioletEllipse() {
  return (
-  <motion.svg
+  <SVG
    width='300'
    height='300'
    viewBox='500 340 1000 1000'
    fill='none'
    initial='hidden'
    animate='visible'
-   style={{
-     position: "relative",
-     top: "65px",
-     left: "140px",
-     zIndex: "-10"
-   }}
   >
-   <motion.mask
+   <MASK
     id='mask0_20_61'
-    style={{maskType: "alpha"}}
     maskUnits='userSpaceOnUse'
     x='-221'
     y='-2'
@@ -419,10 +424,10 @@ export default function VioletEllipse() {
      strokeLinecap='round'
      strokeLinejoin='round' variants={draw} custom={5.3}
     />
-   </motion.mask>
+   </MASK>
    <motion.g mask='url(#mask0_20_61)'>
     <motion.circle cx='1012' cy='840' r='491' fill='#8E8CED' variants={draw} custom={1.4} />
    </motion.g>
-  </motion.svg>
+  </SVG>
  );
 }
