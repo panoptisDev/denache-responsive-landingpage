@@ -16,8 +16,8 @@ const draw = {
 };
 
 const SVG = styled(motion.svg)`
- position: relative;
- top: 35px;
+ position: absolute;
+ top: 130px;
  left: -400px;
  z-index: -10;
 `;
