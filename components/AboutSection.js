@@ -106,7 +106,7 @@ export default function AboutSection() {
           <MacBook animation={{variants: VisualItemVariants}}>
             <Image alt='macbook' src={macbook} height={350} width={500}></Image>
           </MacBook>
-          <HandWithPhone animation={{variants: VisualItemVariants}}>
+          <HandWithPhone animation={{variants: VisualItemVariants}} style={{ originX: -1, originY: 0.5 }} whileHover={{rotate: -5, x: -50}}>
             <Image alt='hand with smartphone 3D' src={hand} height={278} width={271}></Image>
           </HandWithPhone>
           <Notification animation={{variants: VisualItemVariants}} logo={reactLogo} number="1" left={100+150} bottom={180+30}/>

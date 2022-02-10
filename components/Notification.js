@@ -62,11 +62,11 @@ const Blob = styled(motion.div)`
 
 export default function Notification({logo, number, left, bottom, animation}) {
   return (
-    <NotificationWrapper variants={animation.variants} left={left} bottom={bottom}>
+    <NotificationWrapper variants={animation.variants} left={left} bottom={bottom} whileHover={{scale: 1.1}}>
       <LogoWrapper>
         <Image src={logo} alt="technology-logo"/>
       </LogoWrapper>
-      <Blob>
+      <Blob whileHover={{scale: 1.5}}>
         {number}
       </Blob>
     </NotificationWrapper>
