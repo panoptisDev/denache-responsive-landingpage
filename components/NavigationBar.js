@@ -5,7 +5,10 @@ import Image from "next/image";
 import Logo from "../public/Logo.svg"
 
 import ContactButton from "./ContactButton";
+import { useEffect, useState } from "react";
 
+
+/* Desktop Components */
 const NavigationBar = styled(motion.div)`
   position: fixed;
   top: 0;
@@ -58,24 +61,67 @@ const ButtonWrapper = styled.div`
 `
 
 
+/* Mobile Components */
+
+
 
 export default function Navbar() {
-  return (
-    <NavigationBar>
-      <Content>
-        <LogoWrapper>
-          <Image alt="denache logo" src={Logo} height={48} width={165}/>
-        </LogoWrapper>
-        <LinkWrapper>
-          <Link>About</Link>
-          <Link>Services</Link>
-          <Link>Contact</Link>
-        </LinkWrapper>
-        <ButtonWrapper>
-          <ContactButton text="Talk to me" url={"/"} size="10px 20px"/>
-        </ButtonWrapper>
-      </Content>
-    </NavigationBar>
-  )
+
+  // check if mobile screen
+  const [windowDimension, setWindowDimension] = useState(null);
+
+  // on first load
+  useEffect(() => {
+    setWindowDimension(window.innerWidth);
+  }, [])
+
+  // on resize
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimension(window.innerWidth);
+    }
+    window.addEventListener("resize", () => handleResize);
+    return () => window.removeEventListener("resize", () => handleResize); 
+  }, [])
+
+  const isMobile = windowDimension <= 640
+
+  if (isMobile) {
+    return (
+      <NavigationBar>
+        <Content>
+          <LogoWrapper>
+            <Image alt="denache logo" src={Logo} height={48} width={165}/>
+          </LogoWrapper>
+          <LinkWrapper>
+            <Link>About</Link>
+            <Link>Services</Link>
+            <Link>Contact</Link>
+          </LinkWrapper>
+          <ButtonWrapper>
+            <ContactButton text="Talk to me" url={"/"} size="10px 20px"/>
+          </ButtonWrapper>
+        </Content>
+      </NavigationBar>
+    )
+  } else {
+    return (
+      <NavigationBar>
+        <Content>
+          <LogoWrapper>
+            <Image alt="denache logo" src={Logo} height={48} width={165}/>
+          </LogoWrapper>
+          <LinkWrapper>
+            <Link>About</Link>
+            <Link>Services</Link>
+            <Link>Contact</Link>
+          </LinkWrapper>
+          <ButtonWrapper>
+            <ContactButton text="Talk to me" url={"/"} size="10px 20px"/>
+          </ButtonWrapper>
+        </Content>
+      </NavigationBar>
+    )
+  }
 }
 
