@@ -12,8 +12,8 @@ import Notification from '../components/Notification';
 
 const AboutSectionWrapper = styled.div`
  margin-top: 100px;
- min-height: 85vh;
- max-height: 85vh;
+ min-height: 80vh;
+ max-height: 80vh;
 `;
 
 const AboutWrapper = styled.div`
@@ -37,14 +37,14 @@ const AboutHeadingWrapper = styled(motion.div)`
 `;
 
 const AboutContent = styled(motion.div)`
-  margin-top: 150px;
+  margin-top: 100px;
   display: flex;
   align-items: center;
   gap: 100px;
 `
 
 const AboutVisualsWrapper = styled(motion.div)`
-  flex: 1 1;
+  flex: 1.3 1;
 `;
 
 const MacBook = styled(motion.div)`
@@ -72,7 +72,7 @@ const VisualVariants = {
    opacity: 1,
    x: 0,
    transition: {
-     staggerChildren: 1,
+     staggerChildren: 0.3,
      childrenDuration: 0.5,
    }
   },
@@ -109,9 +109,9 @@ export default function AboutSection() {
           <HandWithPhone animation={{variants: VisualItemVariants}}>
             <Image alt='hand with smartphone 3D' src={hand} height={278} width={271}></Image>
           </HandWithPhone>
-          <Notification animation={{variants: VisualItemVariants}} logo={reactLogo} number="1" left={100+110} bottom={180+5}/>
-          <Notification animation={{variants: VisualItemVariants}} logo={dockerLogo} number="4" left={120+110} bottom={120+5}/>
-          <Notification animation={{variants: VisualItemVariants}} logo={graphLogo} number="2" left={140+110} bottom={60+5}/>
+          <Notification animation={{variants: VisualItemVariants}} logo={reactLogo} number="1" left={100+150} bottom={180+30}/>
+          <Notification animation={{variants: VisualItemVariants}} logo={dockerLogo} number="4" left={120+150} bottom={120+30}/>
+          <Notification animation={{variants: VisualItemVariants}} logo={graphLogo} number="2" left={140+150} bottom={60+30}/>
         </AboutVisualsWrapper>
         <AboutTextWrapper>
           <h3>Smart Consulting</h3>
