@@ -6,6 +6,15 @@ import Logo from '../public/Logo.svg';
 
 import ContactButton from './ContactButton';
 import { useEffect, useState } from 'react';
+import MobileMenuItem from './MobileMenuItem';
+
+/* Menu Items */
+
+let menuItems = {
+  About: null,
+  // Services: null,
+  // Contact: null
+};
 
 /* Desktop Components */
 const DesktopNav = {
@@ -66,35 +75,12 @@ const MobileNav = {
   left: 0;
   right: 0;
   box-shadow: 0 4px 36px rgb(196 196 196 / 24%);
+  z-index: 10000;
  `,
  Content: styled(DesktopNav.Content)`
   justify-content: space-around;
  `,
- Link: styled.a`
-  position: relative;
-  cursor: pointer;
-  text-decoration: none;
-  color: #26262e;
-  padding: 0;
-  background-color: initial;
-  border: none;
-  margin-top: 0;
-  margin-bottom: 0;
- `,
- LinkWrapper: styled(motion.div)`
-  height: 100%;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  ${(props) =>
-   props.active &&
-   css`
-    border-bottom-width: 6px;
-    border-bottom-style: solid;
-    border-bottom-color: #8E8CEC;
-   `}
- `,
+ Link: MobileMenuItem,
 };
 
 export default function Navbar({ activeSection }) {
@@ -113,6 +99,7 @@ export default function Navbar({ activeSection }) {
   }
   window.onresize = handleResize;
  }, []);
+
 
  return (
   <>
@@ -142,15 +129,9 @@ export default function Navbar({ activeSection }) {
 
      <MobileNav.BottomBar>
       <MobileNav.Content>
-       <MobileNav.LinkWrapper active={activeSection.about || activeSection.hero}>
-        <MobileNav.Link>About</MobileNav.Link>
-       </MobileNav.LinkWrapper>
-       <MobileNav.LinkWrapper active={activeSection.services}>
-        <MobileNav.Link>Services</MobileNav.Link>
-       </MobileNav.LinkWrapper>
-       <MobileNav.LinkWrapper active={activeSection.contact}>
-        <MobileNav.Link>Contact</MobileNav.Link>
-       </MobileNav.LinkWrapper>
+        <MobileNav.Link itemName={"About"} />
+        <MobileNav.Link itemName={"Services"} />
+        <MobileNav.Link itemName={"Contact"} />
       </MobileNav.Content>
      </MobileNav.BottomBar>
     </>

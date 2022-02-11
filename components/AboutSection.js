@@ -90,7 +90,7 @@ export default function AboutSection() {
     <AboutSectionWrapper>
      <AboutWrapper>
       <AboutHeadingWrapper>
-       <h2>Leave the tough stuff to me</h2>
+       <h2 id="About">Leave the tough stuff to me</h2>
        <p>
         Making sense of new technologies can be a headache. I find the best solutions that fit your business
         best.
