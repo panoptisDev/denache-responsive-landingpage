@@ -20,6 +20,10 @@ const SVG = styled(motion.svg)`
  top: 130px;
  left: -400px;
  z-index: -10;
+ @media only screen and (max-width: 600px) {
+  top: 180px;
+  left: -220px;
+ }
 `;
 
 export default function Waves() {

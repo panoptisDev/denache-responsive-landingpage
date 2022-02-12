@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 import Waves from './illustrations/Waves';
 import macbook from '../public/macbook.png';
-import hand from "../public/hand-with-phone.png"
-import reactLogo from "../public/react-logo.png"
-import dockerLogo from "../public/docker-logo.png"
-import graphLogo from "../public/graph-logo.png"
+import hand from '../public/hand-with-phone.png';
+import reactLogo from '../public/react-logo.png';
+import dockerLogo from '../public/docker-logo.png';
+import graphLogo from '../public/graph-logo.png';
 import Image from 'next/image';
 import Notification from '../components/Notification';
 
@@ -14,6 +14,13 @@ const AboutSectionWrapper = styled.div`
  margin-top: 100px;
  min-height: 80vh;
  max-height: 80vh;
+ @media only screen and (max-width: 600px) {
+  margin: 0 1rem;
+  margin-top: 120px;
+  min-height: 80vh;
+  text-align: center;
+  align-items: center;
+ }
 `;
 
 const AboutWrapper = styled.div`
@@ -22,10 +29,6 @@ const AboutWrapper = styled.div`
   width: 56rem;
   margin: 0 auto;
  }
-
- /*  @media (min-width: 34rem) {
-  margin: 0 1.5rem;
- } */
 `;
 
 const AboutHeadingWrapper = styled(motion.div)`
@@ -34,92 +37,137 @@ const AboutHeadingWrapper = styled(motion.div)`
  align-items: center;
  justify-content: center;
  gap: 10px;
+ @media only screen and (min-width: 600px) {
+  br {
+    display: none;
+  }
+ }
 `;
 
 const AboutContent = styled(motion.div)`
-  margin-top: 100px;
-  display: flex;
-  align-items: center;
-  gap: 100px;
-`
+ margin-top: 100px;
+ display: flex;
+ align-items: center;
+ gap: 100px;
 
-const AboutVisualsWrapper = styled(motion.div)`
-  flex: 1.3 1;
+ @media only screen and (max-width: 600px) {
+  flex-direction: column;
+ }
 `;
 
-const MacBook = styled(motion.div)`
- 
-`
+const AboutVisualsWrapper = styled(motion.div)`
+ flex: 1.3 1;
+ @media only screen and (max-width: 600px) {
+  position: relative;
+  top: 20px;
+  overflow: clip;
+  overflow-clip-margin: 1rem;
+ }
+`;
+
+const MacBook = styled(motion.div)``;
 
 const HandWithPhone = styled(motion.div)`
-  position: absolute;
+ position: absolute;
+ bottom: -50px;
+ left: -80px;
+ z-index: 10;
+
+ @media only screen and (max-width: 600px) {
   bottom: -50px;
-  left: -80px;
-  z-index: 10;
-`
+  left: -85px;
+  transform: scale(0.9);
+ }
+`;
 
 const AboutTextWrapper = styled(motion.div)`
-  flex: 1 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-`
+ flex: 1 1;
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+`;
 
 /* Animation */
 const VisualVariants = {
-  hidden: { opacity: 0, x: -100},
-  show: {
-   opacity: 1,
-   x: 0,
-   transition: {
-     staggerChildren: 0.3,
-     childrenDuration: 0.5,
-   }
+ hidden: { opacity: 0, x: -100 },
+ show: {
+  opacity: 1,
+  x: 0,
+  transition: {
+   staggerChildren: 0.3,
+   childrenDuration: 0.5,
   },
- };
- 
- /* Animation */
- const VisualItemVariants = {
-  hidden: { opacity: 0, x: -20 },
-  show: { opacity: 1, x: 0},
- };
+ },
+};
 
+/* Animation */
+const VisualItemVariants = {
+ hidden: { opacity: 0, x: -20 },
+ show: { opacity: 1, x: 0 },
+};
 
 export default function AboutSection() {
-  return (
-    <AboutSectionWrapper>
-     <AboutWrapper>
-      <AboutHeadingWrapper>
-       <h2 id="About">Leave the tough stuff to me</h2>
-       <p>
-        Making sense of new technologies can be a headache. I find the best solutions that fit your business
-        best.
-       </p>
-      </AboutHeadingWrapper>
-      <AboutContent>
-        <AboutVisualsWrapper 
-          variants={VisualVariants}
-          initial='hidden'
-          whileInView='show'
-          viewport={{ once: true }}
-        >
-          <MacBook animation={{variants: VisualItemVariants}}>
-            <Image alt='macbook' src={macbook} height={350} width={500}></Image>
-          </MacBook>
-          <HandWithPhone animation={{variants: VisualItemVariants}} style={{ originX: -1, originY: 0.5 }} whileHover={{rotate: -5, x: -50}}>
-            <Image alt='hand with smartphone 3D' src={hand} height={278} width={271}></Image>
-          </HandWithPhone>
-          <Notification animation={{variants: VisualItemVariants}} logo={reactLogo} number="1" left={100+150} bottom={180+30}/>
-          <Notification animation={{variants: VisualItemVariants}} logo={dockerLogo} number="4" left={120+150} bottom={120+30}/>
-          <Notification animation={{variants: VisualItemVariants}} logo={graphLogo} number="2" left={140+150} bottom={60+30}/>
-        </AboutVisualsWrapper>
-        <AboutTextWrapper>
-          <h3>Smart Consulting</h3>
-          <p>Your success is my priority. I take care of providing you with sensible recommendations and make sure that all solutions work for you!</p>
-        </AboutTextWrapper>
-      </AboutContent>
-      <Waves />
-     </AboutWrapper>
-    </AboutSectionWrapper>
-  )
+ return (
+  <AboutSectionWrapper>
+   <AboutWrapper>
+    <AboutHeadingWrapper>
+     <h2 id='About'>
+      Leave the tough <br/>stuff to me
+     </h2>
+     <p>
+      Making sense of new technologies can be a headache. I find the best solutions that fit your business
+      best.
+     </p>
+    </AboutHeadingWrapper>
+    <AboutContent>
+     <AboutVisualsWrapper
+      variants={VisualVariants}
+      initial='hidden'
+      whileInView='show'
+      viewport={{ once: true }}
+     >
+      <MacBook animation={{ variants: VisualItemVariants }}>
+       <Image alt='macbook' src={macbook} height={350} width={500}></Image>
+      </MacBook>
+      <HandWithPhone
+       animation={{ variants: VisualItemVariants }}
+       style={{ originX: -1, originY: 0.5 }}
+       whileHover={{ rotate: -5, x: -50 }}
+      >
+       <Image alt='hand with smartphone 3D' src={hand} height={278} width={271}></Image>
+      </HandWithPhone>
+      <Notification
+       animation={{ variants: VisualItemVariants }}
+       logo={reactLogo}
+       number='1'
+       left={100 + 150}
+       bottom={180 + 30}
+      />
+      <Notification
+       animation={{ variants: VisualItemVariants }}
+       logo={dockerLogo}
+       number='4'
+       left={120 + 150}
+       bottom={120 + 30}
+      />
+      <Notification
+       animation={{ variants: VisualItemVariants }}
+       logo={graphLogo}
+       number='2'
+       left={140 + 150}
+       bottom={60 + 30}
+      />
+     </AboutVisualsWrapper>
+     <AboutTextWrapper>
+      <h3>Smart Consulting</h3>
+      <p>
+       Your success is my priority. I take care of providing you with sensible recommendations and make sure
+       that all solutions work for you!
+      </p>
+     </AboutTextWrapper>
+    </AboutContent>
+    <Waves />
+   </AboutWrapper>
+  </AboutSectionWrapper>
+ );
 }

@@ -7,13 +7,11 @@ const NotificationWrapper = styled(motion.div)`
   /* Position */
   position: absolute;
   z-index: 10;
-  left: 0;
   ${(props) =>
     props.left &&
     css`
     left: ${props.left}px;
   `}
-  bottom: 0;
   ${(props) =>
     props.bottom &&
     css`
@@ -34,6 +32,24 @@ const NotificationWrapper = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+
+    /* Mobile */
+
+    
+ @media only screen and (max-width: 600px) {
+  ${(props) =>
+    props.left &&
+    css`
+    left: ${props.left - 120}px;
+  `}
+  ${(props) =>
+    props.bottom &&
+    css`
+    bottom: ${props.bottom - 40 }px;
+  `}
+ }
+
 `
 
 const LogoWrapper = styled(motion.div)`
