@@ -12,7 +12,7 @@ import MobileMenuItem from './MobileMenuItem';
 
 let menuItems = {
   About: null,
-  // Services: null,
+  Services: null,
   // Contact: null
 };
 
@@ -24,7 +24,7 @@ const DesktopNav = {
   left: 0;
   right: 0;
   background-color: white;
-  z-index: 1000;
+  z-index: 10000;
   height: 75px;
   box-shadow: 0 4px 36px rgb(196 196 196 / 24%);
  `,

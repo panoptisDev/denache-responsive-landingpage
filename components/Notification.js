@@ -6,7 +6,7 @@ import Image from 'next/image'
 const NotificationWrapper = styled(motion.div)`
   /* Position */
   position: absolute;
-  z-index: 1000;
+  z-index: 10;
   left: 0;
   ${(props) =>
     props.left &&

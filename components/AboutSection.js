@@ -55,7 +55,7 @@ const HandWithPhone = styled(motion.div)`
   position: absolute;
   bottom: -50px;
   left: -80px;
-  z-index: 1000;
+  z-index: 10;
 `
 
 const AboutTextWrapper = styled(motion.div)`
