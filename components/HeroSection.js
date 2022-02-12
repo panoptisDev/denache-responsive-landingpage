@@ -24,7 +24,8 @@ const Section = styled.section`
  @media only screen and (max-width: 600px) {
   flex-direction: column;
   margin: 0 1rem;
-  margin-top: 80px;
+  margin-top: 120px;
+  min-height: 80vh;
  }  
 `;
 
