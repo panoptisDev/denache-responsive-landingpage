@@ -8,6 +8,8 @@ body {
 
 body {
   margin-top: 75px;
+  margin-left: 1rem;
+  margin-right: 1rem
 }
 
 a {
@@ -62,9 +64,8 @@ p, a {
  color: #26262e;
 }
 
-@media only screen and (max-width: 600px) {
+@media (min-width: 320px) and (max-width: 480px) {
   body {
-    margin: 0 1rem;
     text-align: center;
   }
  }  

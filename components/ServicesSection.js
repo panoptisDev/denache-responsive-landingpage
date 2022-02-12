@@ -27,7 +27,7 @@ const ServicesHeadingWrapper = styled(motion.div)`
  align-items: center;
  justify-content: center;
  gap: 10px;
- @media only screen and (max-width: 600px) {
+ @media (min-width: 320px) and (max-width: 480px) {
  margin-bottom: 100px;
  }
 `;
@@ -48,7 +48,7 @@ const GreenEllipseSVG = styled(motion.svg)`
   left: -90px;
   z-index: -10;
  }
- @media only screen and (max-width: 600px) {
+ @media (min-width: 320px) and (max-width: 480px) {
   position: absolute;
   top: 170px;
   right: 0;
@@ -66,7 +66,7 @@ const VioletEllipseSVG = styled(motion.svg)`
  z-index: -10;
  transform: scale(0.8) rotate(90deg);
  }
- @media only screen and (max-width: 600px) {
+ @media (min-width: 320px) and (max-width: 480px) {
   position: absolute;
   bottom: -150px;
   left: -30px;

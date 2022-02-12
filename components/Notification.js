@@ -37,7 +37,9 @@ const NotificationWrapper = styled(motion.div)`
     /* Mobile */
 
     
- @media only screen and (max-width: 600px) {
+ @media (min-width: 320px) and (max-width: 480px) {
+  overflow: clip;
+  overflow-clip-margin: 50px;
   ${(props) =>
     props.left &&
     css`

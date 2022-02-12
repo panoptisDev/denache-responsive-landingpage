@@ -14,7 +14,7 @@ const AboutSectionWrapper = styled.div`
  margin-top: 100px;
  min-height: 80vh;
  max-height: 80vh;
- @media only screen and (max-width: 600px) {
+ @media (min-width: 320px) and (max-width: 480px) {
   min-height: 70vh;
   align-items: center;
  }
@@ -47,18 +47,18 @@ const AboutContent = styled(motion.div)`
  align-items: center;
  gap: 100px;
 
- @media only screen and (max-width: 600px) {
+ @media (min-width: 320px) and (max-width: 480px) {
   flex-direction: column;
  }
 `;
 
 const AboutVisualsWrapper = styled(motion.div)`
  flex: 1.3 1;
- @media only screen and (max-width: 600px) {
+ @media (min-width: 320px) and (max-width: 480px) {
   position: relative;
   top: 20px;
   overflow: clip;
-  overflow-clip-margin: 1rem;
+  overflow-clip-margin: 50px;
  }
 `;
 
@@ -68,11 +68,11 @@ const HandWithPhone = styled(motion.div)`
  position: absolute;
  bottom: -50px;
  left: -80px;
- z-index: 10;
+ z-index: 11;
 
- @media only screen and (max-width: 600px) {
+ @media (min-width: 320px) and (max-width: 480px) {
   bottom: -50px;
-  left: -85px;
+  left: -70px;
   transform: scale(0.9);
  }
 `;
@@ -83,7 +83,7 @@ const AboutTextWrapper = styled(motion.div)`
  flex-direction: column;
  gap: 10px;
 
-  @media only screen and (max-width: 600px) {
+  @media (min-width: 320px) and (max-width: 480px) {
   display: none;
  }  
 `;
