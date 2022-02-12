@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-import Waves from '../components/Waves';
+import Waves from './illustrations/Waves';
 import macbook from '../public/macbook.png';
 import hand from "../public/hand-with-phone.png"
 import reactLogo from "../public/react-logo.png"

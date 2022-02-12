@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import ContactButton from '../components/ContactButton';
 
 import hand from '../public/hand-1.png';
-import VioletEllipse from '../components/VioletEllipse';
+import VioletEllipse from './illustrations/VioletEllipse';
 
 const Section = styled.section`
  display: flex;
