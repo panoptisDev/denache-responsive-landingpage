@@ -11,14 +11,14 @@ import MobileMenuItem from './MobileMenuItem';
 /* Menu Items */
 
 let menuItems = {
-  About: null,
-  Services: null,
-  // Contact: null
+ About: null,
+ Services: null,
+ // Contact: null
 };
 
 /* Desktop Components */
 const DesktopNav = {
- Bar: styled(motion.div)`
+ Bar: styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -67,6 +67,7 @@ const DesktopNav = {
 const MobileNav = {
  TopBar: styled(DesktopNav.Bar)`
   height: 65px;
+  transition: 0.3s;
  `,
  BottomBar: styled(DesktopNav.Bar)`
   top: inherit;
@@ -129,9 +130,9 @@ export default function Navbar({ activeSection }) {
 
      <MobileNav.BottomBar>
       <MobileNav.Content>
-        <MobileNav.Link itemName={"About"} />
-        <MobileNav.Link itemName={"Services"} />
-        <MobileNav.Link itemName={"Contact"} />
+       <MobileNav.Link itemName={'About'} />
+       <MobileNav.Link itemName={'Services'} />
+       <MobileNav.Link itemName={'Contact'} />
       </MobileNav.Content>
      </MobileNav.BottomBar>
     </>

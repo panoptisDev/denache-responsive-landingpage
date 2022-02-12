@@ -9,8 +9,8 @@ import Ellipse from './illustrations/Ellipse';
 const Section = styled.section`
  display: flex;
  align-items: center;
- min-height: 100vh;
- max-height: 100vh;
+ min-height: 85vh;
+ max-height: 85vh;
 
  @media (min-width: 64rem) {
   width: 56rem;
@@ -23,7 +23,6 @@ const Section = styled.section`
 
  @media only screen and (max-width: 600px) {
   flex-direction: column;
-  margin: 0 1rem;
   margin-top: 120px;
   min-height: 80vh;
  }  
@@ -38,7 +37,6 @@ const HeroTextWrapper = styled(motion.div)`
  gap: 20px;
 
  @media only screen and (max-width: 600px) {
-  text-align: center;
   align-items: center;
  }  
 `;

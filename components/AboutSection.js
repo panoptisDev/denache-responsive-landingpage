@@ -15,10 +15,7 @@ const AboutSectionWrapper = styled.div`
  min-height: 80vh;
  max-height: 80vh;
  @media only screen and (max-width: 600px) {
-  margin: 0 1rem;
-  margin-top: 120px;
-  min-height: 80vh;
-  text-align: center;
+  min-height: 70vh;
   align-items: center;
  }
 `;
@@ -85,6 +82,10 @@ const AboutTextWrapper = styled(motion.div)`
  display: flex;
  flex-direction: column;
  gap: 10px;
+
+  @media only screen and (max-width: 600px) {
+  display: none;
+ }  
 `;
 
 /* Animation */

@@ -26,7 +26,7 @@ export default function MobileMenuItem({ itemName, active }) {
 
  function handleClick(event) {
   event.preventDefault();
-  anchorTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  anchorTarget.scrollIntoView({ behavior: 'smooth', block: "start" });
  }
 
  return (
