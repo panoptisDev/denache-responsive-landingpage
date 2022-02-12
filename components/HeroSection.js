@@ -78,6 +78,21 @@ const HandImageWrapper = styled(motion.div)`
  }  
 `;
 
+const EllipseSVG = styled(motion.svg)`
+ position: relative;
+ top: 65px;
+ left: 140px;
+ z-index: -10;
+
+ @media only screen and (max-width: 600px) {
+  position: absolute;
+  top: 60vh;
+  left: 50px;
+  width: 250px;
+  height: 250px;
+ }
+`;
+
 /* Animation */
 const HandImageWrapperVariants = {
  hidden: { opacity: 0, x: -100 },
@@ -96,7 +111,7 @@ export default function HeroSection() {
    </HeroTextWrapper>
    <HeroImageWrapper>
     <HandImageWrapper variants={HandImageWrapperVariants} initial='hidden' animate='show'>
-     <Ellipse color="#8E8CED"/>
+     <Ellipse color="#8E8CED" SVG={EllipseSVG} />
      <Image alt='3D-Hand' src={hand} height={400} width={260}></Image>
     </HandImageWrapper>
    </HeroImageWrapper>

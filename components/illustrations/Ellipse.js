@@ -15,28 +15,21 @@ const draw = {
  },
 };
 
-const SVG = styled(motion.svg)`
- position: relative;
- top: 65px;
- left: 140px;
- z-index: -10;
-
- @media only screen and (max-width: 600px) {
-  position: absolute;
-  top: 60vh;
-  left: 50px;
-  width: 250px;
-  height: 250px;
- }
-`;
-
 const MASK = styled(motion.mask)`
  mask-type: alpha;
 `;
 
-export default function Ellipse({ color }) {
+export default function Ellipse({ color, SVG }) {
  return (
-  <SVG width='300' height='300' viewBox='500 340 1000 1000' fill='none' initial='hidden' animate='visible'>
+  <SVG
+   width='300'
+   height='300'
+   viewBox='500 340 1000 1000'
+   fill='none'
+   initial='hidden'
+   whileInView='visible'
+   viewport={{ once: true }}
+  >
    <MASK id='mask0_20_61' maskUnits='userSpaceOnUse' x='-221' y='-2' width='2636' height='2636'>
     <motion.path
      d='M378.14 1940.7C546.08 1772.76 589.92 1816.6 757.86 1648.7C925.8 1480.8 881.97 1436.87 1049.91 1268.93C1217.85 1100.99 1261.7 1144.83 1429.65 976.93C1597.6 809.03 1553.75 765.14 1721.7 597.2'
@@ -526,7 +519,14 @@ export default function Ellipse({ color }) {
     />
    </MASK>
    <motion.g mask='url(#mask0_20_61)'>
-    <motion.circle cx='1012' cy='840' r='491' fill={color} variants={draw} custom={1.4} />
+    <motion.circle
+     cx='1012'
+     cy='840'
+     r='491'
+     fill={color}
+     variants={draw}
+     custom={1.4}
+    />
    </motion.g>
   </SVG>
  );
