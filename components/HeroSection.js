@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import ContactButton from '../components/ContactButton';
 
 import hand from '../public/hand-1.png';
-import VioletEllipse from './illustrations/VioletEllipse';
+import Ellipse from './illustrations/Ellipse';
 
 const Section = styled.section`
  display: flex;
@@ -96,7 +96,7 @@ export default function HeroSection() {
    </HeroTextWrapper>
    <HeroImageWrapper>
     <HandImageWrapper variants={HandImageWrapperVariants} initial='hidden' animate='show'>
-     <VioletEllipse />
+     <Ellipse color="#8E8CED"/>
      <Image alt='3D-Hand' src={hand} height={400} width={260}></Image>
     </HandImageWrapper>
    </HeroImageWrapper>
