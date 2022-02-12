@@ -72,7 +72,7 @@ const HandWithPhone = styled(motion.div)`
 
  @media (min-width: 320px) and (max-width: 480px) {
   bottom: -50px;
-  left: -70px;
+  left: -120px;
   transform: scale(0.9);
  }
 `;
