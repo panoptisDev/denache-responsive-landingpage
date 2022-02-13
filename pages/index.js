@@ -11,11 +11,15 @@ import { motion } from 'framer-motion';
 import { Formik } from 'formik';
 
 const ContactSection = styled.section`
- min-height: 80vh;
+ min-height: 60vh;
  display: flex;
+ gap: 20px;
  flex-direction: column;
  justify-content: center;
  align-items: center;
+ background-color: #f5f5fa;
+ margin: 150px -1rem;
+ padding: 50px 0 50px 0;
 `;
 
 const ContactHeadingWrapper = styled(motion.div)`
@@ -23,7 +27,7 @@ const ContactHeadingWrapper = styled(motion.div)`
  flex-direction: column;
  align-items: center;
  justify-content: center;
- gap: 10px;
+ gap: 0px;
  @media (min-width: 320px) and (max-width: 480px) {
   margin-bottom: 100px;
  }
@@ -32,13 +36,22 @@ const ContactHeadingWrapper = styled(motion.div)`
 const Form = styled(motion.form)`
  display: flex;
  flex-direction: column;
+ gap: 10px;
  justify-content: space-between;
+ width: 100%;
+ width: 50rem;
+ padding: 0 10rem;
 `;
 
 const TextInputWrapper = styled(motion.div)`
  font-size: 16px;
  line-height: 24px;
  height: 72px;
+ ${(props) =>
+  props.height &&
+  css`
+   height: max(72px, ${props.height + 48}px);
+  `}
  display: inline-block;
  position: relative;
  background-color: transparent;
@@ -84,13 +97,17 @@ const TextInput = styled.input`
  height: 100%;
  box-sizing: border-box;
  margin-top: 14px;
+
+ font-family: Inter;
+ font-weight: 300;
 `;
 
 const TextInputLabel = styled.label`
  margin: 0;
  padding: 0;
  border: 0;
- font: inherit;
+ font-family: Inter;
+ font-weight: 300;
  vertical-align: baseline;
  position: absolute;
  line-height: 22px;
@@ -107,15 +124,48 @@ const TextInputLabel = styled.label`
   props.filled &&
   css`
    transform: scale(0.75) translate(0px, -28px);
-    color: rgba(0, 0, 0, 0.3);
+   color: rgba(0, 0, 0, 0.3);
+  `}
+
+ ${(props) =>
+  props.errorMessage &&
+  css`
+   &:after {
+    color: rgb(183, 20, 22);
+    margin-left: 20px;
+    content: '(${props.errorMessage})';
+   }
   `}
 
  ${TextInputWrapper}:focus-within & {
   transform: scale(0.75) translate(0px, -28px);
   color: #8e8ced;
  }
+`;
 
-
+const TextArea = styled(motion.textarea)`
+ ${(props) =>
+  props.height &&
+  css`
+   height: ${props.height}px;
+  `}
+ width: 100%;
+ resize: none;
+ font: inherit;
+ line-height: 24px;
+ padding: 0px;
+ cursor: inherit;
+ position: relative;
+ border: none;
+ outline: none;
+ background-color: rgba(0, 0, 0, 0);
+ color: rgba(0, 0, 0, 0.87);
+ opacity: 1;
+ -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+ margin-top: 36px;
+ margin-bottom: -36px;
+ box-sizing: border-box;
+ appearance: textfield;
 `;
 export default function Home() {
  // check if mobile screen
@@ -133,6 +183,14 @@ export default function Home() {
   }
   window.onresize = handleResize;
  }, []);
+
+ // resizing textarea automatically
+ const [textAreaHeight, setTextAreaHeight] = useState("");
+
+ function autoResize(element) {
+   console.log(textAreaHeight);
+   setTextAreaHeight(element.target.scrollHeight)
+ }
 
  return (
   <div>
@@ -175,39 +233,45 @@ export default function Home() {
      >
       {({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
        <Form onSubmit={handleSubmit}>
-         <TextInputWrapper>
-          <TextInputLabel filled={values.name ? true : false}>What is your name?</TextInputLabel>
-          <TextInput
-           type='text'
-           name='name'
-           onChange={handleChange}
-           onBlur={handleBlur}
-           value={values.name}
-          />
-          {errors.name && touched.name && errors.name}
-         </TextInputWrapper>
-         <TextInputWrapper>
-          <TextInputLabel filled={values.email ? true : false}>Your email</TextInputLabel>
-          <TextInput
-           type='email'
-           name='email'
-           onChange={handleChange}
-           onBlur={handleBlur}
-           value={values.email}
-          />
-          {errors.email && touched.email && errors.email}
-         </TextInputWrapper>
+        <TextInputWrapper>
+         <TextInputLabel filled={values.name ? true : false}>What is your name?</TextInputLabel>
+         <TextInput type='text' name='name' onChange={handleChange} onBlur={handleBlur} value={values.name} />
+        </TextInputWrapper>
+        <TextInputWrapper>
+         <TextInputLabel
+          filled={values.email ? true : false}
+          errorMessage={errors.email && touched.email && errors.email}
+         >
+          Your email*
+         </TextInputLabel>
+         <TextInput
+          type='email'
+          name='email'
+          onChange={handleChange}
+          onBlur={handleBlur}
+          value={values.email}
+         />
+        </TextInputWrapper>
 
-        {/* <textarea
-         type='text'
-         name='text'
-         rows='1'
-         onChange={handleChange}
-         onBlur={handleBlur}
-         value={values.email}
-        />
-        {errors.email && touched.email && errors.email}
-        <button type='submit' disabled={isSubmitting}>
+        <TextInputWrapper height={textAreaHeight}>
+         <TextInputLabel
+          filled={values.text ? true : false}
+          errorMessage={errors.text && touched.text && errors.text}
+         >
+          How can I help you?
+         </TextInputLabel>
+         <TextArea
+          type='text'
+          name='text'
+          rows='1'
+          onChange={handleChange}
+          onBlur={handleBlur}
+          value={values.text}
+          onInput={autoResize}
+          height={textAreaHeight}
+         />
+        </TextInputWrapper>
+        {/* <button type='submit' disabled={isSubmitting}>
          Submit
         </button> */}
        </Form>
