@@ -23,7 +23,7 @@ const Section = styled.section`
 
  @media (min-width: 320px) and (max-width: 480px) {
   flex-direction: column;
-  margin-top: 120px;
+  margin-top: 100px;
   min-height: 80vh;
  }  
 `;
@@ -85,7 +85,7 @@ const EllipseSVG = styled(motion.svg)`
 
  @media (min-width: 320px) and (max-width: 480px) {
   position: absolute;
-  top: 60vh;
+  top: 70vh;
   left: 50px;
   width: 250px;
   height: 250px;

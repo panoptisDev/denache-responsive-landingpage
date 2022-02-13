@@ -34,24 +34,6 @@ const NotificationWrapper = styled(motion.div)`
   align-items: center;
 
 
-    /* Mobile */
-
-    
- @media (min-width: 320px) and (max-width: 480px) {
-  overflow: clip;
-  overflow-clip-margin: 50px;
-  ${(props) =>
-    props.left &&
-    css`
-    left: ${props.left - 120}px;
-  `}
-  ${(props) =>
-    props.bottom &&
-    css`
-    bottom: ${props.bottom - 40 }px;
-  `}
- }
-
 `
 
 const LogoWrapper = styled(motion.div)`

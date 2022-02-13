@@ -50,7 +50,7 @@ const GreenEllipseSVG = styled(motion.svg)`
  }
  @media (min-width: 320px) and (max-width: 480px) {
   position: absolute;
-  top: 170px;
+  top: 230px;
   right: 0;
   z-index: -10;
   width: 250px;

@@ -22,7 +22,7 @@ const SVG = styled(motion.svg)`
  z-index: -10;
  @media (min-width: 320px) and (max-width: 480px) {
   top: 180px;
-  left: -220px;
+  left: -260px;
  }
 `;
 

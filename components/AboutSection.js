@@ -71,11 +71,21 @@ const HandWithPhone = styled(motion.div)`
  z-index: 11;
 
  @media (min-width: 320px) and (max-width: 480px) {
-  bottom: -50px;
-  left: -120px;
+  bottom: -60px;
+  left: -70px;
   transform: scale(0.9);
  }
 `;
+
+const NotificationWrapper = styled(motion.div)`
+ position: relative;
+
+ @media (min-width: 320px) and (max-width: 480px) {
+  left: -80px;
+  bottom: -10px;
+  transform: scale(0.8);
+ }
+`
 
 const AboutTextWrapper = styled(motion.div)`
  flex: 1 1;
@@ -137,27 +147,29 @@ export default function AboutSection() {
       >
        <Image alt='hand with smartphone 3D' src={hand} height={278} width={271}></Image>
       </HandWithPhone>
-      <Notification
-       animation={{ variants: VisualItemVariants }}
-       logo={reactLogo}
-       number='1'
-       left={100 + 150}
-       bottom={180 + 30}
-      />
-      <Notification
-       animation={{ variants: VisualItemVariants }}
-       logo={dockerLogo}
-       number='4'
-       left={120 + 150}
-       bottom={120 + 30}
-      />
-      <Notification
-       animation={{ variants: VisualItemVariants }}
-       logo={graphLogo}
-       number='2'
-       left={140 + 150}
-       bottom={60 + 30}
-      />
+      <NotificationWrapper>
+        <Notification
+        animation={{ variants: VisualItemVariants }}
+        logo={reactLogo}
+        number='1'
+        left={250}
+        bottom={210}
+        />
+        <Notification
+        animation={{ variants: VisualItemVariants }}
+        logo={dockerLogo}
+        number='4'
+        left={270}
+        bottom={150}
+        />
+        <Notification
+        animation={{ variants: VisualItemVariants }}
+        logo={graphLogo}
+        number='2'
+        left={290}
+        bottom={90}
+        />
+      </NotificationWrapper>
      </AboutVisualsWrapper>
      <AboutTextWrapper>
       <h3>Smart Consulting</h3>
