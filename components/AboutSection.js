@@ -121,8 +121,10 @@ export default function AboutSection() {
  return (
   <AboutSectionWrapper>
    <AboutWrapper>
+    {/* For menu scrolling */}
+    <div id="About" style={{position: "absolute", top: "-100px", left: 0}}></div>
     <AboutHeadingWrapper>
-     <h2 id='About'>
+     <h2>
       Leave the tough <br/>stuff to me
      </h2>
      <p>

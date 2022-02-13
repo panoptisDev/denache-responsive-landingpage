@@ -100,8 +100,10 @@ export default function ServicesSection({ windowDimension }) {
  return (
   <ServicesSectionWrapper>
    <ServicesWrapper>
+     {/* For menu scrolling */}
+    <div id="Services" style={{position: "absolute", top: "-100px", left: 0}}></div>
     <ServicesHeadingWrapper>
-     <h2 id='Services'>Inspiration, Consultation, Development</h2>
+     <h2>Inspiration, Consultation, Development</h2>
      <p>
       Running a successfull business can be stressful. My services give you a couple of things less to worry
       about.
