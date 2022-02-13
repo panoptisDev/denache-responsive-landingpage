@@ -161,10 +161,9 @@ const TextArea = styled(motion.textarea)`
  position: relative;
  border: none;
  outline: none;
- background-color: rgba(0, 0, 0, 0);
+ background-color: rgba(0, 0, 0, 0) !important;
  color: rgba(0, 0, 0, 0.87);
  opacity: 1;
- -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
  margin-top: 36px;
  margin-bottom: -36px;
  box-sizing: border-box;
