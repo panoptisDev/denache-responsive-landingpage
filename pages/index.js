@@ -32,7 +32,7 @@ export default function Home() {
 
    <main>
     <NavigationBar windowDimension={windowDimension} />
-    <HeroSection />
+    {windowDimension && <HeroSection windowDimension={windowDimension} />}
     <AboutSection />
     {windowDimension && <ServicesSection windowDimension={windowDimension} />}
    </main>

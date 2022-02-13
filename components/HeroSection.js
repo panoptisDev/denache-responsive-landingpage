@@ -114,10 +114,10 @@ const HandImageWrapperVariants = {
  show: { opacity: 1, x: 0, transition: { delay: 0.4 } },
 };
 
-export default function HeroSection() {
+export default function HeroSection({windowDimension}) {
  return (
   <Section>
-   <HeroTextWrapper variants={HeroTextWrapperVariants} initial='hidden' animate='show'>
+   <HeroTextWrapper variants={windowDimension >= 480 ? HeroTextWrapperVariants : null} initial='hidden' animate='show'>
     <motion.h1 variants={HeroTextItem}>Smart, creative development.</motion.h1>
     <motion.p>
      No techie? No problem. I provide creative and professional software development for your business vision.
@@ -125,7 +125,7 @@ export default function HeroSection() {
     <ContactButton variants={HeroTextItem} text="Let's collaborate!" url={'/'} size='15px 35px' float='left' />
    </HeroTextWrapper>
    <HeroImageWrapper>
-    <HandImageWrapper variants={HandImageWrapperVariants} initial='hidden' animate='show'>
+    <HandImageWrapper variants={windowDimension >= 480 ? HandImageWrapperVariants : null} initial='hidden' animate='show'>
      <Ellipse color="#8E8CED" SVG={EllipseSVG} />
      <Image alt='3D-Hand' src={hand} height={400} width={260}></Image>
     </HandImageWrapper>

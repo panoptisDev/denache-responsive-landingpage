@@ -121,11 +121,11 @@ export default function ServicesSection({ windowDimension }) {
       about.
      </p>
     </ServicesHeadingWrapper>
-    <ServicesContent variants={windowDimension >= 640 ? parentVariants : null} initial='hidden' whileInView='show' viewport={{ once: false }}>
+    <ServicesContent variants={windowDimension >= 480 ? parentVariants : null} initial='hidden' whileInView='show' viewport={{ once: false }}>
      <Ellipse color='#84DCB4' SVG={GreenEllipseSVG} />
      <Ellipse color='#8E8CED' SVG={VioletEllipseSVG} />
      <ServiceTile
-      animation={windowDimension >= 640 ? childVariants : null}
+      animation={windowDimension >= 480 ? childVariants : null}
       icon={<DesignIcon />}
       name='Design'
       text='Let me inspire you with modern, sophisticated and clean design proposals'
@@ -133,7 +133,7 @@ export default function ServicesSection({ windowDimension }) {
       linkHref='/'
      />
      <ServiceTile
-      animation={windowDimension >= 640 ? childVariants : null}
+      animation={windowDimension >= 480 ? childVariants : null}
       icon={<DevelopIcon />}
       name='Develop'
       text='Let me develop clean, functional and performant features and applications'
@@ -141,7 +141,7 @@ export default function ServicesSection({ windowDimension }) {
       linkHref='/'
      />
      <ServiceTile
-      animation={windowDimension >= 640 ? childVariants : null}
+      animation={windowDimension >= 480 ? childVariants : null}
       icon={<AdviseIcon />}
       name='Advise'
       text='Let me ask you the right questions to arrive at the right answers'
@@ -149,7 +149,7 @@ export default function ServicesSection({ windowDimension }) {
       linkHref='/'
      />
      <ServiceTile
-      animation={windowDimension >= 640 ? childVariants : null}
+      animation={windowDimension >= 480 ? childVariants : null}
       icon={<FixIcon />}
       name='Fix'
       text='Whatever your painpoints are, let me help you with all your technology questions'
