@@ -46,7 +46,7 @@ export default function Waves() {
    variants={draw}
    initial='hidden'
    whileInView='visible'
-   viewport={{ once: true }}
+   viewport={{ once: false }}
   >
    <motion.g>
     <motion.path

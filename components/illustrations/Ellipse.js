@@ -27,8 +27,7 @@ export default function Ellipse({ color, SVG }) {
    viewBox='500 340 1000 1000'
    fill='none'
    initial='hidden'
-   whileInView='visible'
-   viewport={{ once: true }}
+   animate="visible"
   >
    <MASK id='mask0_20_61' maskUnits='userSpaceOnUse' x='-221' y='-2' width='2636' height='2636'>
     <motion.path

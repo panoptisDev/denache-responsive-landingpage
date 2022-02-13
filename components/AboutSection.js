@@ -61,7 +61,7 @@ const AboutContent = styled(motion.div)`
  }
 `;
 
-const AboutVisualsWrapper = styled.div`
+const AboutVisualsWrapper = styled(motion.div)`
  flex: 1.3 1;
  @media (min-width: 320px) and (max-width: 480px) {
   position: relative;
@@ -70,7 +70,7 @@ const AboutVisualsWrapper = styled.div`
   overflow-clip-margin: 50px;
  }
  @media (min-width: 481px) and (max-width: 600px) {
-   transform: scale(0.8);
+
  }
 `;
 
@@ -157,7 +157,7 @@ export default function AboutSection() {
       variants={VisualVariants}
       initial='hidden'
       whileInView='show'
-      viewport={{ once: true }}
+      viewport={{ once: false }}
      >
       <MacBook animation={{ variants: VisualItemVariants }}>
        <Image alt='macbook' src={macbook} height={350} width={500}></Image>

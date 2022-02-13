@@ -59,7 +59,7 @@ const GreenEllipseSVG = styled(motion.svg)`
   left: -90px;
   z-index: -10;
  }
- 
+
  @media (min-width: 320px) and (max-width: 480px) {
   position: absolute;
   top: 230px;
@@ -121,7 +121,7 @@ export default function ServicesSection({ windowDimension }) {
       about.
      </p>
     </ServicesHeadingWrapper>
-    <ServicesContent variants={windowDimension >= 640 ? parentVariants : null} initial='hidden' whileInView='show' viewport={{ once: true }}>
+    <ServicesContent variants={windowDimension >= 640 ? parentVariants : null} initial='hidden' whileInView='show' viewport={{ once: false }}>
      <Ellipse color='#84DCB4' SVG={GreenEllipseSVG} />
      <Ellipse color='#8E8CED' SVG={VioletEllipseSVG} />
      <ServiceTile
