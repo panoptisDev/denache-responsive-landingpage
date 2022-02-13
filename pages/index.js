@@ -32,9 +32,7 @@ const ContactHeadingWrapper = styled(motion.div)`
  align-items: center;
  justify-content: center;
  gap: 0px;
- @media (min-width: 320px) and (max-width: 480px) {
-  margin-bottom: 100px;
- }
+
 `;
 
 const Form = styled(motion.form)`
