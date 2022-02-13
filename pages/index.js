@@ -28,3 +28,10 @@ export default function Home() {
   </div>
  );
 }
+
+export function getStaticProps(context) {
+  /* No fetching necessary at this point */
+  return {
+    props: {}
+  }
+}
