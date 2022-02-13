@@ -59,7 +59,6 @@ export default function ServiceTile({ icon, name, text, linkText, linkHref, anim
       right: 0,
       bottom: 0,
      }}
-     whileHover={{ scale: 0.95 }}
     >
      {icon}
      <p style={{ fontWeight: 600 }}>{name}</p>
