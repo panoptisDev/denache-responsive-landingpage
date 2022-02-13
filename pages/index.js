@@ -9,6 +9,7 @@ import ServicesSection from '../components/ServicesSection';
 import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
 import { Formik } from 'formik';
+import ContactButton from '../components/ContactButton';
 
 const ContactSection = styled.section`
  min-height: 60vh;
@@ -20,6 +21,9 @@ const ContactSection = styled.section`
  background-color: #f5f5fa;
  margin: 150px -1rem;
  padding: 50px 0 50px 0;
+ @media (max-width: 700px) {
+  padding: 50px;
+ }
 `;
 
 const ContactHeadingWrapper = styled(motion.div)`
@@ -37,15 +41,16 @@ const Form = styled(motion.form)`
  display: flex;
  flex-direction: column;
  gap: 10px;
- justify-content: space-between;
+ justify-content: center;
+ align-items: center;
  width: 100%;
- width: 50rem;
- padding: 0 10rem;
+ max-width: 30rem;
 `;
 
 const TextInputWrapper = styled(motion.div)`
  font-size: 16px;
  line-height: 24px;
+ width: 100%;
  height: 72px;
  ${(props) =>
   props.height &&
@@ -269,8 +274,11 @@ export default function Home() {
           value={values.text}
           onInput={autoResize}
           height={textAreaHeight}
+          spellCheck={false}
          />
         </TextInputWrapper>
+        <br></br>
+        <ContactButton text="Hit me with it!" size="10px 40px 10px 40px"/>
         {/* <button type='submit' disabled={isSubmitting}>
          Submit
         </button> */}
