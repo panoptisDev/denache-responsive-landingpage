@@ -18,8 +18,7 @@ const ContactSection = styled.section`
  flex-direction: column;
  justify-content: center;
  align-items: center;
- background-color: #f5f5fa;
- margin: 150px -1rem;
+ margin-top: 150px;
  padding: 50px 0 50px 0;
  @media (max-width: 700px) {
   padding: 50px;
@@ -171,7 +170,7 @@ const TextArea = styled(motion.textarea)`
 `;
 export default function Home() {
  // check if mobile screen
- const [windowDimension, setWindowDimension] = useState(null);
+ const [windowDimension, setWindowDimension] = useState(0);
 
  // on first load
  useEffect(() => {
@@ -288,11 +287,4 @@ export default function Home() {
    <footer></footer>
   </div>
  );
-}
-
-export function getStaticProps(context) {
- /* No fetching necessary at this point */
- return {
-  props: {},
- };
 }
