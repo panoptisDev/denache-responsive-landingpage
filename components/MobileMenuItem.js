@@ -15,25 +15,6 @@ const LinkWrapper = styled(motion.div)`
    border-bottom-style: solid;
    border-bottom-color: #8e8cec;
   `}
-
- a {
-  &:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 4px;
-    bottom: -5px;
-    left: 0;
-    background-color: #8E8CED;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-  }
-   &:hover:after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-   }
- }
 `;
 
 export default function MobileMenuItem({ itemName, active }) {
@@ -41,15 +22,15 @@ export default function MobileMenuItem({ itemName, active }) {
 
  useEffect(() => {
   setAnchorTarget(document.getElementById(itemName));
- }, [itemName]);
+ });
 
- function handleClick(event) {
+ async function handleClick(event) {
   event.preventDefault();
-  anchorTarget.scrollIntoView({ behavior: 'smooth', block: "start" });
+  anchorTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
  }
 
  return (
-  <LinkWrapper active={active ? 1 : 0} >
+  <LinkWrapper active={active ? 1 : 0}>
    <a href={`#${itemName}`} onClick={handleClick} aria-label={`Scroll to ${itemName}`}>
     {itemName}
    </a>

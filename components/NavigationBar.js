@@ -1,20 +1,12 @@
-import { motion } from 'framer-motion';
-import styled, { css } from 'styled-components';
+
+import styled from 'styled-components';
 
 import Image from 'next/image';
 import Logo from '../public/Logo.svg';
 
 import ContactButton from './ContactButton';
-import { useEffect, useState } from 'react';
 import MobileMenuItem from './MobileMenuItem';
 
-/* Menu Items */
-
-let menuItems = {
- About: null,
- Services: null,
- // Contact: null
-};
 
 /* Desktop Components */
 const DesktopNav = {
@@ -131,9 +123,9 @@ export default function Navbar({ windowDimension }) {
 
      <MobileNav.BottomBar>
       <MobileNav.Content>
-       <MobileNav.Link itemName={'About'} />
-       <MobileNav.Link itemName={'Services'} />
-       <MobileNav.Link itemName={'Contact'} />
+       <MobileNav.Link itemName={'About'} key={1}/>
+       <MobileNav.Link itemName={'Services'} key={2}/>
+       <MobileNav.Link itemName={'Contact'} key={3} />
       </MobileNav.Content>
      </MobileNav.BottomBar>
     </>
