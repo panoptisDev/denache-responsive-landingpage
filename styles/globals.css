@@ -64,7 +64,7 @@ p, a {
  color: #26262e;
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 1024px) {
   body {
     text-align: center;
   }

@@ -26,6 +26,13 @@ const Section = styled.section`
   margin-top: 100px;
   min-height: 80vh;
  }  
+
+ @media (min-width: 481px) and (max-width: 1024px) {
+  flex-direction: column;
+  min-height: 80vh;
+  margin: 0 1rem 200px 1rem;
+ }
+
 `;
 
 const HeroTextWrapper = styled(motion.div)`
@@ -36,8 +43,9 @@ const HeroTextWrapper = styled(motion.div)`
  justify-content: flex-start;
  gap: 20px;
 
- @media (min-width: 320px) and (max-width: 480px) {
+ @media (min-width: 320px) and (max-width: 1024px) {
   align-items: center;
+  margin-top: 20px;
  }  
 `;
 
@@ -66,6 +74,10 @@ const HeroImageWrapper = styled(motion.div)`
  @media (min-width: 320px) and (max-width: 480px) {
   margin-left: 100px;
  }  
+
+  @media (min-width: 481px) and (max-width: 1024px) {
+    margin-left: -150px;
+ }
 `;
 
 const HandImageWrapper = styled(motion.div)`
@@ -89,6 +101,10 @@ const EllipseSVG = styled(motion.svg)`
   left: 50px;
   width: 250px;
   height: 250px;
+ }
+ @media (min-width: 481px) and (max-width: 1024px) {
+  top: 5vh;
+  left: 171px;
  }
 `;
 

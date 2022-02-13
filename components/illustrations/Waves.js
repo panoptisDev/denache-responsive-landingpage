@@ -24,6 +24,14 @@ const SVG = styled(motion.svg)`
   top: 180px;
   left: -260px;
  }
+ @media (min-width: 600px) and (max-width: 1024px) {
+  top: 130px;
+  left: -220px;
+ }
+ @media (min-width: 481px) and (max-width: 1023px) {
+  top: 170px;
+  left: -220px;
+ }
 `;
 
 export default function Waves() {

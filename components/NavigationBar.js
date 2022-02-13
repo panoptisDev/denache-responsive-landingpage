@@ -70,7 +70,7 @@ export default function Navbar({ windowDimension }) {
  
  return (
   <>
-   {windowDimension >= 640 ? (
+   {windowDimension >= 1024 ? (
     <DesktopNav.Bar>
      <DesktopNav.Content>
       <DesktopNav.LogoWrapper>

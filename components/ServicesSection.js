@@ -19,6 +19,11 @@ const ServicesWrapper = styled.div`
   width: 56rem;
   margin: 0 auto;
  }
+ @media (min-width: 481px) and (max-width: 1024px) {
+  flex-direction: column;
+  min-height: 80vh;
+  margin: 0 1rem 200px 1rem;
+ }
 `;
 
 const ServicesHeadingWrapper = styled(motion.div)`
@@ -42,12 +47,19 @@ const ServicesContent = styled(motion.div)`
 `;
 
 const GreenEllipseSVG = styled(motion.svg)`
- @media only screen and (min-width: 600px) {
+ @media only screen and (min-width: 700px) {
   position: absolute;
   top: 110px;
   left: -90px;
   z-index: -10;
  }
+ @media (min-width: 481px) and (max-width: 699px) {
+  position: absolute;
+  top: 210px;
+  left: -90px;
+  z-index: -10;
+ }
+ 
  @media (min-width: 320px) and (max-width: 480px) {
   position: absolute;
   top: 230px;
@@ -59,7 +71,7 @@ const GreenEllipseSVG = styled(motion.svg)`
 `;
 
 const VioletEllipseSVG = styled(motion.svg)`
- @media only screen and (min-width: 600px) {
+ @media only screen and (min-width: 481px) {
   position: absolute;
   bottom: -100px;
   right: -70px;

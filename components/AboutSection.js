@@ -14,9 +14,13 @@ const AboutSectionWrapper = styled.div`
  margin-top: 100px;
  min-height: 80vh;
  max-height: 80vh;
+
  @media (min-width: 320px) and (max-width: 480px) {
   min-height: 70vh;
   align-items: center;
+ }
+
+ @media (min-width: 481px) and (max-width: 1024px) {
  }
 `;
 
@@ -24,6 +28,10 @@ const AboutWrapper = styled.div`
  position: relative;
  @media (min-width: 64rem) {
   width: 56rem;
+  margin: 0 auto;
+ }
+ @media (min-width: 481px) and (max-width: 1024px) {
+  max-width: 34rem;
   margin: 0 auto;
  }
 `;
@@ -36,9 +44,10 @@ const AboutHeadingWrapper = styled(motion.div)`
  gap: 10px;
  @media only screen and (min-width: 600px) {
   br {
-    display: none;
+   display: none;
   }
  }
+ 
 `;
 
 const AboutContent = styled(motion.div)`
@@ -47,18 +56,21 @@ const AboutContent = styled(motion.div)`
  align-items: center;
  gap: 100px;
 
- @media (min-width: 320px) and (max-width: 480px) {
+ @media (min-width: 320px) and (max-width: 1024px) {
   flex-direction: column;
  }
 `;
 
-const AboutVisualsWrapper = styled(motion.div)`
+const AboutVisualsWrapper = styled.div`
  flex: 1.3 1;
  @media (min-width: 320px) and (max-width: 480px) {
   position: relative;
   top: 20px;
   overflow: clip;
   overflow-clip-margin: 50px;
+ }
+ @media (min-width: 481px) and (max-width: 600px) {
+   transform: scale(0.8);
  }
 `;
 
@@ -75,6 +87,10 @@ const HandWithPhone = styled(motion.div)`
   left: -70px;
   transform: scale(0.9);
  }
+ @media (min-width: 481px) and (max-width: 1024px) {
+  bottom: 0;
+  left: -40px;
+ }
 `;
 
 const NotificationWrapper = styled(motion.div)`
@@ -85,7 +101,10 @@ const NotificationWrapper = styled(motion.div)`
   bottom: -10px;
   transform: scale(0.8);
  }
-`
+ @media (min-width: 481px) and (max-width: 1024px) {
+  transform: scale(1.1);
+ }
+`;
 
 const AboutTextWrapper = styled(motion.div)`
  flex: 1 1;
@@ -93,9 +112,9 @@ const AboutTextWrapper = styled(motion.div)`
  flex-direction: column;
  gap: 10px;
 
-  @media (min-width: 320px) and (max-width: 480px) {
+ @media (min-width: 320px) and (max-width: 1024px) {
   display: none;
- }  
+ }
 `;
 
 /* Animation */
@@ -122,10 +141,11 @@ export default function AboutSection() {
   <AboutSectionWrapper>
    <AboutWrapper>
     {/* For menu scrolling */}
-    <div id="About" style={{position: "absolute", top: "-100px", left: 0}}></div>
+    <div id='About' style={{ position: 'absolute', top: '-100px', left: 0 }}></div>
     <AboutHeadingWrapper>
      <h2>
-      Leave the tough <br/>stuff to me
+      Leave the tough <br />
+      stuff to me
      </h2>
      <p>
       Making sense of new technologies can be a headache. I find the best solutions that fit your business
@@ -150,27 +170,27 @@ export default function AboutSection() {
        <Image alt='hand with smartphone 3D' src={hand} height={278} width={271}></Image>
       </HandWithPhone>
       <NotificationWrapper>
-        <Notification
+       <Notification
         animation={{ variants: VisualItemVariants }}
         logo={reactLogo}
         number='1'
         left={250}
         bottom={210}
-        />
-        <Notification
+       />
+       <Notification
         animation={{ variants: VisualItemVariants }}
         logo={dockerLogo}
         number='4'
         left={270}
         bottom={150}
-        />
-        <Notification
+       />
+       <Notification
         animation={{ variants: VisualItemVariants }}
         logo={graphLogo}
         number='2'
         left={290}
         bottom={90}
-        />
+       />
       </NotificationWrapper>
      </AboutVisualsWrapper>
      <AboutTextWrapper>
