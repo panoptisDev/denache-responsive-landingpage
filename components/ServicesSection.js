@@ -28,7 +28,7 @@ const ServicesHeadingWrapper = styled(motion.div)`
  justify-content: center;
  gap: 10px;
  @media (min-width: 320px) and (max-width: 480px) {
- margin-bottom: 100px;
+  margin-bottom: 100px;
  }
 `;
 
@@ -60,11 +60,11 @@ const GreenEllipseSVG = styled(motion.svg)`
 
 const VioletEllipseSVG = styled(motion.svg)`
  @media only screen and (min-width: 600px) {
- position: absolute;
- bottom: -100px;
- right: -70px;
- z-index: -10;
- transform: scale(0.8) rotate(90deg);
+  position: absolute;
+  bottom: -100px;
+  right: -70px;
+  z-index: -10;
+  transform: scale(0.8) rotate(90deg);
  }
  @media (min-width: 320px) and (max-width: 480px) {
   position: absolute;
@@ -77,25 +77,26 @@ const VioletEllipseSVG = styled(motion.svg)`
  }
 `;
 
-/* Animation of Tiles */
+export default function ServicesSection({ windowDimension }) {
+ /* Animation of Tiles */
 
-/* Parent */
-const parentVariants = {
- hidden: {},
- show: {
-  transition: {
-   staggerChildren: .5,
+ /* Parent */
+ const parentVariants = {
+  hidden: {},
+  show: {
+   transition: {
+    staggerChildren: 0.5,
+   },
   },
- },
-};
+ }
 
-/* Children */
-const childVariants = {
- hidden: { opacity: 0, x: -100, rotate: 100, scale: 0 },
- show: { opacity: 1, x: 0, rotate: 0, scale: 1},
-};
+ /* Children */
+ const childVariants = {
+  hidden: { opacity: 0, x: -100, rotate: 100, scale: 0 },
+  show: { opacity: 1, x: 0, rotate: 0, scale: 1 },
+ }
 
-export default function ServicesSection() {
+ 
  return (
   <ServicesSectionWrapper>
    <ServicesWrapper>
@@ -106,11 +107,11 @@ export default function ServicesSection() {
       about.
      </p>
     </ServicesHeadingWrapper>
-    <ServicesContent variants={parentVariants} initial='hidden' whileInView='show' viewport={{ once: true }}>
+    <ServicesContent variants={windowDimension >= 640 ? parentVariants : null} initial='hidden' whileInView='show' viewport={{ once: true }}>
      <Ellipse color='#84DCB4' SVG={GreenEllipseSVG} />
      <Ellipse color='#8E8CED' SVG={VioletEllipseSVG} />
      <ServiceTile
-      animation={childVariants}
+      animation={windowDimension >= 640 ? childVariants : null}
       icon={<DesignIcon />}
       name='Design'
       text='Let me inspire you with modern, sophisticated and clean design proposals'
@@ -118,7 +119,7 @@ export default function ServicesSection() {
       linkHref='/'
      />
      <ServiceTile
-      animation={childVariants}
+      animation={windowDimension >= 640 ? childVariants : null}
       icon={<DevelopIcon />}
       name='Develop'
       text='Let me develop clean, functional and performant features and applications'
@@ -126,7 +127,7 @@ export default function ServicesSection() {
       linkHref='/'
      />
      <ServiceTile
-      animation={childVariants}
+      animation={windowDimension >= 640 ? childVariants : null}
       icon={<AdviseIcon />}
       name='Advise'
       text='Let me ask you the right questions to arrive at the right answers'
@@ -134,7 +135,7 @@ export default function ServicesSection() {
       linkHref='/'
      />
      <ServiceTile
-      animation={childVariants}
+      animation={windowDimension >= 640 ? childVariants : null}
       icon={<FixIcon />}
       name='Fix'
       text='Whatever your painpoints are, let me help you with all your technology questions'

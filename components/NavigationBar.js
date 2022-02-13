@@ -56,6 +56,23 @@ const DesktopNav = {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 15px;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 4px;
+    bottom: -5px;
+    left: 0;
+    background-color: #8E8CED;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+   &:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+   }
+
  `,
  ButtonWrapper: styled.div`
   flex: 1;
@@ -84,24 +101,8 @@ const MobileNav = {
  Link: MobileMenuItem,
 };
 
-export default function Navbar({ activeSection }) {
- // check if mobile screen
- const [windowDimension, setWindowDimension] = useState(null);
-
- // on first load
- useEffect(() => {
-  setWindowDimension(window.innerWidth);
- }, []);
-
- // on resize
- useEffect(() => {
-  function handleResize() {
-   setWindowDimension(window.innerWidth);
-  }
-  window.onresize = handleResize;
- }, []);
-
-
+export default function Navbar({ windowDimension }) {
+ 
  return (
   <>
    {windowDimension >= 640 ? (
