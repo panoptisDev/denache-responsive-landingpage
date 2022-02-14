@@ -7,6 +7,8 @@ import AboutSection from '../components/AboutSection';
 import ServicesSection from '../components/ServicesSection';
 import ContactSection from '../components/ContactSection';
 
+import * as emailClient from "../utils/emailKey" ;
+
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
