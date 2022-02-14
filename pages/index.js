@@ -7,6 +7,25 @@ import AboutSection from '../components/AboutSection';
 import ServicesSection from '../components/ServicesSection';
 import ContactSection from '../components/ContactSection';
 
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
+
+import linkedinLogo from '../public/linkedin.svg';
+import githubLogo from '../public/github.svg';
+import Image from 'next/image';
+
+const Footer = styled.footer`
+ position: relative;
+ display: flex;
+ height: 100px;
+ gap: 20px;
+ justify-content: center;
+ align-items: center;
+
+ @media (max-width: 1023px) {
+  margin-bottom: 55px;
+ }
+`;
 
 export default function Home() {
  // check if mobile screen
@@ -37,11 +56,28 @@ export default function Home() {
     {windowDimension && <HeroSection windowDimension={windowDimension} />}
     <AboutSection />
     {windowDimension && <ServicesSection windowDimension={windowDimension} />}
-    <ContactSection/>
-
+    <ContactSection />
    </main>
-
-   <footer></footer>
+   <Footer>
+    <motion.a
+     target='_blank'
+     rel='noreferrer'
+     href='https://www.linkedin.com/in/maxim-buz-17a2a717b/'
+     whileHover={{ scale: 1.4 }}
+     style={{ cursor: 'pointer' }}
+    >
+     <Image src={linkedinLogo} alt='LinkedIn Logo' />
+    </motion.a>
+    <motion.a
+     target='_blank'
+     rel='noreferrer'
+     href='https://github.com/MaximBuz'
+     whileHover={{ scale: 1.4 }}
+     style={{ cursor: 'pointer' }}
+    >
+     <Image src={githubLogo} alt='GitHub Logo' />
+    </motion.a>
+   </Footer>
   </div>
  );
 }
