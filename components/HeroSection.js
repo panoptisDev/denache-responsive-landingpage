@@ -122,7 +122,7 @@ export default function HeroSection({windowDimension}) {
     <motion.p>
      No techie? No problem. I provide creative and professional software development for your business vision.
     </motion.p>
-    <ContactButton variants={HeroTextItem} text="Let's collaborate!" url={'/'} size='15px 35px' float='left' />
+    <ContactButton variants={HeroTextItem} text="Let's collaborate!" url={'Contact'} size='15px 35px' float='left' />
    </HeroTextWrapper>
    <HeroImageWrapper>
     <HandImageWrapper variants={windowDimension >= 480 ? HandImageWrapperVariants : null} initial='hidden' animate='show'>

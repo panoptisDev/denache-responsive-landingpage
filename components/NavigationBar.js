@@ -82,7 +82,7 @@ export default function Navbar({ windowDimension }) {
        <DesktopNav.Link itemName={'Contact'} key={3}/>
       </DesktopNav.LinkWrapper>
       <DesktopNav.ButtonWrapper>
-       <ContactButton text='Talk to me' url={'/'} size='10px 20px' />
+       <ContactButton text='Talk to me' url={'Contact'} size='10px 20px' />
       </DesktopNav.ButtonWrapper>
      </DesktopNav.Content>
     </DesktopNav.Bar>

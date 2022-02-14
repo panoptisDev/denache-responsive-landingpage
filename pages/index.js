@@ -12,16 +12,27 @@ import { Formik } from 'formik';
 import ContactButton from '../components/ContactButton';
 
 const ContactSection = styled.section`
+position: relative;
  min-height: 60vh;
  display: flex;
  gap: 20px;
  flex-direction: column;
  justify-content: center;
  align-items: center;
+ margin-left: -1rem;
+ margin-right: -1rem;
  margin-top: 150px;
  padding: 50px 0 50px 0;
+ background-color: #f5f5fa;
  @media (max-width: 700px) {
   padding: 50px;
+ }
+ @media (max-width: 480px) {
+  background-color: rgb(0, 0, 0, 0);
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 50px;
+  padding: 20px;
  }
 `;
 
@@ -31,7 +42,6 @@ const ContactHeadingWrapper = styled(motion.div)`
  align-items: center;
  justify-content: center;
  gap: 0px;
-
 `;
 
 const Form = styled(motion.form)`
@@ -186,11 +196,11 @@ export default function Home() {
  }, []);
 
  // resizing textarea automatically
- const [textAreaHeight, setTextAreaHeight] = useState("");
+ const [textAreaHeight, setTextAreaHeight] = useState('');
 
  function autoResize(element) {
-   console.log(textAreaHeight);
-   setTextAreaHeight(element.target.scrollHeight)
+  console.log(textAreaHeight);
+  setTextAreaHeight(element.target.scrollHeight);
  }
 
  return (
@@ -208,7 +218,7 @@ export default function Home() {
 
     <ContactSection>
      {/* For menu scrolling */}
-     <div id='Services' style={{ position: 'absolute', top: '-100px', left: 0 }}></div>
+     <div id='Contact' style={{ position: 'absolute', top: '-100px', left: 0 }}></div>
      <ContactHeadingWrapper>
       <h2>Let’s get in touch</h2>
       <p>Have a project in mind? Need a wise advice? Want to say hi? I’m excited to talk to you.</p>
@@ -274,7 +284,7 @@ export default function Home() {
          />
         </TextInputWrapper>
         <br></br>
-        <ContactButton text="Hit me with it!" size="10px 40px 10px 40px"/>
+        <ContactButton text='Hit me with it!' size='10px 40px 10px 40px' />
         {/* <button type='submit' disabled={isSubmitting}>
          Submit
         </button> */}
