@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 
-const Button = styled(motion.a)`
+const Button = styled(motion.button)`
  position: relative;
  padding: 10px 28px;
  ${(props) =>
@@ -28,23 +28,11 @@ const Button = styled(motion.a)`
  line-height: 19px;
 `;
 
-export default function ContactButton({ text, url, size, float, type }) {
- const [anchorTarget, setAnchorTarget] = useState(null);
-
- useEffect(() => {
-  setAnchorTarget(document.getElementById(`${url}`));
- });
-
- async function handleClick(event) {
-  event.preventDefault();
-  anchorTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
- }
+export default function SubmitButton({ text, size, float }) {
 
  return (
   <Button
-   href={`#${url}`}
-   onClick={handleClick}
-   aria-label={`Scroll to ${url}`}
+   type="submit"
    size={size}
    float={float}
    whileHover={{ scale: 1.1 }}

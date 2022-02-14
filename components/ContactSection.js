@@ -1,9 +1,12 @@
-import { useState  } from 'react';
+import { useState, useEffect } from 'react';
 
 import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
 import { Formik } from 'formik';
-import ContactButton from '../components/ContactButton';
+import SubmitButton from '../components/SubmitButton';
+
+import emailjs from '@emailjs/browser';
+import { init } from "@emailjs/browser";
 
 const Section = styled.section`
  position: relative;
@@ -25,7 +28,6 @@ const Section = styled.section`
   background-color: rgb(0, 0, 0, 0);
   margin-left: 0;
   margin-right: 0;
-  margin-bottom: 50px;
   padding: 20px;
  }
 `;
@@ -61,7 +63,6 @@ const TextInputWrapper = styled(motion.div)`
  display: inline-block;
  position: relative;
  background-color: transparent;
- font-family: Roboto, sans-serif;
  transition: height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
  cursor: auto;
  border-bottom-style: solid;
@@ -158,6 +159,8 @@ const TextArea = styled(motion.textarea)`
  width: 100%;
  resize: none;
  font: inherit;
+ font-family: Inter;
+ font-weight: 300;
  line-height: 24px;
  padding: 0px;
  cursor: inherit;
@@ -172,7 +175,6 @@ const TextArea = styled(motion.textarea)`
  box-sizing: border-box;
  appearance: textfield;
 `;
-
 
 export default function ContactSection() {
  // resizing textarea automatically
@@ -204,14 +206,20 @@ export default function ContactSection() {
      return errors;
     }}
     onSubmit={(values, { setSubmitting }) => {
-     setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
-      setSubmitting(false);
-     }, 400);
+     emailjs.send('default_service', 'template_na05sca', values, "user_63pGT8hWBe7iovDx4v0uc").then(
+      function (response) {
+       setSubmitting(false);
+       console.log('SUCCESS!', response.status, response.text, values);
+      },
+      function (error) {
+       setSubmitting(false);
+       console.log('FAILED...', error, values);
+      }
+     );
     }}
    >
     {({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
-     <Form onSubmit={handleSubmit}>
+     <Form id='contactForm' onSubmit={handleSubmit}>
       <TextInputWrapper>
        <TextInputLabel filled={values.name ? true : false}>What is your name?</TextInputLabel>
        <TextInput type='text' name='name' onChange={handleChange} onBlur={handleBlur} value={values.name} />
@@ -252,10 +260,7 @@ export default function ContactSection() {
        />
       </TextInputWrapper>
       <br></br>
-      <ContactButton text='Hit me with it!' size='10px 40px 10px 40px' />
-      {/* <button type='submit' disabled={isSubmitting}>
-         Submit
-        </button> */}
+      <SubmitButton text='Hit me with it!' size='10px 40px 10px 40px' disabled={isSubmitting} />
      </Form>
     )}
    </Formik>
