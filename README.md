@@ -82,7 +82,7 @@ Front-End:
 
 Maxim Buz - [LinkedIn](https://www.linkedin.com/in/maxim-buz-17a2a717b/) - mbuz.maxim@gmail.com
 
-Project Link: [https://github.com/MaximBuz/kanban/](https://github.com/MaximBuz/kuva-project-manager/)
+Project Link: [https://github.com/MaximBuz/denache-responsive-landingpage/](https://github.com/MaximBuz/denache-responsive-landingpage/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
